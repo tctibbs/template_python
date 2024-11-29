@@ -10,11 +10,15 @@ RUN poetry config virtualenvs.in-project false
 # Copy the dependency files (pyproject.toml and poetry.lock) to the container
 COPY ./pyproject.toml ./poetry.lock ./
 
-# Install project dependencies specified in pyproject.toml
+# Synchronize the lock file with the pyproject.toml without updating dependencies
+# --no-update: Ensures the poetry.lock matches pyproject.toml without upgrading versions
+
+# Install dependencies from the lock file
 # --no-ansi: Disables colored output
 # --no-interaction: Skips any interactive prompts
 # --no-root: Does not install the current project as a dependency
-RUN poetry install --no-ansi --no-interaction --no-root
+RUN poetry lock --no-update && \
+    poetry install --no-ansi --no-interaction --no-root
 
 # Update the package list
 RUN apt-get update 
