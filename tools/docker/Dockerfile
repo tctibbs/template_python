@@ -1,5 +1,5 @@
 # Use the official Python 3.13-rc image as the base image
-FROM python:3.13-rc
+FROM python:3.12
 
 # Install Poetry, a dependency management tool for Python
 RUN pip install poetry
