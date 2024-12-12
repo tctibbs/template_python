@@ -30,7 +30,8 @@
                 "yzhang.markdown-all-in-one",
                 "tamasfe.even-better-toml",
                 "ms-toolsai.jupyter",
-                "mechatroner.rainbow-csv"
+                "mechatroner.rainbow-csv",
+                "jebbs.plantuml"
             ]
         }
     }
