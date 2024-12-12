@@ -1,6 +1,14 @@
 # Use the official Python 3.13-rc image as the base image
 FROM python:3.12
 
+# Install tzdata for timezone configuration
+RUN apt-get update && \
+    apt-get install -y tzdata
+
+# Set the timezone to EST (use a region like America/New_York that observes EST)
+ENV TZ=America/New_York
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # Install Poetry, a dependency management tool for Python
 RUN pip install poetry
 
