@@ -1,4 +1,4 @@
-# Use the official Python 3.13-rc image as the base image
+# Use the official Python 3.12 image as the base image
 FROM python:3.12
 
 # Install tzdata for timezone configuration
@@ -12,8 +12,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 # Install Poetry, a dependency management tool for Python
 RUN pip install poetry
 
-# [Optional] Configure Poetry to create virtual environments inside the project folder
-RUN poetry config virtualenvs.in-project false
+# Configure Poetry to install dependencies globally
+RUN poetry config virtualenvs.create false
 
 # Copy the dependency files (pyproject.toml and poetry.lock) to the container
 COPY ./pyproject.toml ./poetry.lock ./
