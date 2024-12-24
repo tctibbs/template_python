@@ -1,6 +1,9 @@
 # Use the official Python 3.12 image as the base image
 FROM python:3.12
 
+# Force Python to send output directly to the terminal (stdout/stderr) without buffering
+ENV PYTHONUNBUFFERED=1
+
 # Install tzdata for timezone configuration
 RUN apt-get update && \
     apt-get install -y tzdata
