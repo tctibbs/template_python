@@ -63,8 +63,11 @@ Run Tests
 pytest
 ```
 
----
 
-License
+## Common Errors
+
+- **GPG Error / Not Signed**: Can be caused by insufficient disk space. Free up space and retry.
+
+## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
