@@ -28,7 +28,7 @@ python = "^3.10" # Required Python version.
 [tool.poetry.dev-dependencies]
 ruff = "^0.8.4"     # Ruff: A linter and code formatter.
 pytest = "^7.4.4"   # Pytest: A testing framework for running unit tests.
-mypy = "^1.8.0"     # Mypy: A static type checker for enforcing type annotations.
+mypy = "^1.14.0"    # Mypy: A static type checker for enforcing type annotations.
 
 # Poetry build system requirements.
 [build-system]
