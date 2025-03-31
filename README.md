@@ -1,3 +1,5 @@
+![Template Banner](assets/template_banner.png)
+
 # Python Template
 
 My personal Python project template to provide a streamlined starting point for Python projects.
