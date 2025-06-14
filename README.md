@@ -4,7 +4,7 @@ My personal Python project template to provide a streamlined starting point for 
 
 ## Features
 
-- **Dependency Management**: Uses [Poetry](https://python-poetry.org/) for dependency and environment management.
+- **Dependency Management**: Uses [`uv`](https://github.com/astral-sh/uv) for fast dependency installation based on `pyproject.toml`.
 - **Static Analysis**: Integrated with:
   - [Ruff](https://docs.astral.sh/ruff/): A fast Python linter and formatter.
   - [Pytest](https://pytest.org/): A framework for running unit tests.
@@ -15,7 +15,7 @@ My personal Python project template to provide a streamlined starting point for 
 ## Requirements
 
 - Python 3.10 or higher.
-- [Poetry](https://python-poetry.org/) for dependency management.
+- [`uv`](https://github.com/astral-sh/uv) for installing dependencies.
 - [Docker](https://www.docker.com/) for containerized development (optional but recommended).
 
 ---
@@ -38,14 +38,15 @@ Choose one of the following options:
 	1.	Ensure you have Docker and VSCode installed with the Remote - Containers extension.
 	2.	Open the project in VSCode. It will automatically prompt you to open the folder in a container.
 	3.	The DevContainer includes:
-        •	Pre-installed tools like Poetry, Ruff, and Pytest.
+        •	Pre-installed tools like uv, ruff, and pytest.
         •	Python 3.13-rc Docker image.
 
-### Option B: Poetry
+Option B: Manual Setup with uv
 
-Using Poetry:
+If you’re running locally:
 ```bash
-poetry install
+pip install uv
+uv pip install ".[dev]"
 ```
 
 

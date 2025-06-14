@@ -1,4 +1,4 @@
-[tool.poetry]
+[project]
 # Name and version of the library.
 name = "python_template"
 version = "0.1.0"
@@ -7,34 +7,37 @@ version = "0.1.0"
 description = "A Python template library for reusable Python project setups."
 
 # Author information.
-authors = ["Tristan Tibbs <tristantibbs@gmail.com>"]
+authors = [{ name = "Tristan Tibbs", email = "tristantibbs@gmail.com" }]
 
 # License under which the project is distributed.
-license = "MIT"
+license = { text = "MIT" }
 
 # Path to the README file for project documentation.
 readme = "README.md"
 
-# Specify where the package is located in the repository.
-packages = [
-    { include = "python_template", from = "src" }
-]
+# Required Python version.
+requires-python = ">=3.10"
 
 # Production dependencies (none in this example, add here if needed).
-[tool.poetry.dependencies]
-python = "^3.10" # Required Python version.
+dependencies = []
 
 # Development dependencies, not required in production.
-[tool.poetry.dev-dependencies]
-ruff = "^0.8.4"     # Ruff: A linter and code formatter.
-pytest = "^7.4.4"   # Pytest: A testing framework for running unit tests.
-mypy = "^1.8.0"     # Mypy: A static type checker for enforcing type annotations.
+[project.optional-dependencies]
+dev = [
+  "ruff>=0.8.4",     # Ruff: A linter and code formatter.
+  "pytest>=7.4.4",   # Pytest: A testing framework for running unit tests.
+  "mypy>=1.8.0"      # Mypy: A static type checker for enforcing type annotations.
+]
 
-# Poetry build system requirements.
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+# Build system requirements.
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+# Specify where the package is located in the repository.
+packages = ["python_template"]
+package-dir = { "" = "src" }
 
 [tool.mypy]
 enable_incomplete_feature = ["NewGenericSyntax"]    # Enable experimental features in Mypy, such as new syntax.
@@ -56,4 +59,4 @@ indent-width = 4    # Number of spaces for indentation (default is 4 spaces).
 # Q: Enforces consistent usage of single or double quotes.
 # PD: Enforces pandas-specific best practices and catches common issues.
 # ANN: Enforces checks for type/return annotations
-select = ["E", "F", "W", "N", "BLE", "B", "A", "ICN", "Q", "PD", 'ANN']
+select = ["E", "F", "W", "N", "BLE", "B", "A", "ICN", "Q", "PD", "ANN"]
