@@ -6,7 +6,7 @@ ENV PYTHONUNBUFFERED=1
 
 # Install tzdata for timezone configuration
 RUN apt-get update && \
-    apt-get install -y tzdata
+    apt-get install -y tzdata sudo
 
 # Set the timezone to EST (use a region like America/New_York that observes EST)
 ENV TZ=America/New_York
@@ -24,5 +24,12 @@ COPY . .
 # Install dependencies using uv (both production and development)
 RUN uv pip install --system ".[dev]"
 
+# Create a non-root user and add to sudo group
+RUN useradd -m -s /bin/bash developer && \
+    echo "developer ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+# Switch to the non-root user
+USER developer
+
 # Update the package list
-RUN apt-get update 
+RUN sudo apt-get update 

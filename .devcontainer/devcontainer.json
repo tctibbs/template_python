@@ -34,5 +34,8 @@
                 "jebbs.plantuml"
             ]
         }
-    }
+    },
+
+    // Remote user configuration
+    "remoteUser": "developer"
 }
