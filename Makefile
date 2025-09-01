@@ -20,7 +20,7 @@ format: ## Format code and fix linting issues
 
 # Run test suite
 test: ## Run pytest test suite
-	uv run pytest
+	uv run pytest -v
 
 # Clean build artifacts and cache files
 clean: ## Remove build artifacts and cache files

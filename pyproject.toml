@@ -24,9 +24,9 @@ dependencies = []
 # Development dependencies, not required in production.
 [dependency-groups]
 dev = [
-  "ruff>=0.8.4",     # Ruff: A linter and code formatter.
-  "pytest>=7.4.4",   # Pytest: A testing framework for running unit tests.
-  "mypy>=1.14.0"     # Mypy: A static type checker for enforcing type annotations.
+  "ruff>=0.12.11",    # Ruff: A linter and code formatter.
+  "pytest>=8.4.1",    # Pytest: A testing framework for running unit tests.
+  "mypy>=1.17.1"      # Mypy: A static type checker for enforcing type annotations.
 ]
 
 [build-system]
@@ -43,7 +43,7 @@ python_version = "3.11"                             # Target Python version for 
 strict = true                                       # Enforce strict type checking to catch potential issues early
 warn_return_any = true                              # Warn when returning Any type
 warn_unused_configs = true                          # Warn about unused mypy configuration options
-enable_incomplete_feature = ["NewGenericSyntax"]    # Enable experimental features in Mypy, such as new syntax
+# Note: NewGenericSyntax is enabled by default in newer MyPy versions
 
 [tool.ruff]
 line-length = 88    # Set the maximum line length (88 chars for better readability)
