@@ -2,6 +2,8 @@
 
 # Python Template
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A modern Python project template with automated development workflows and quality tools.
 
 ## Features
@@ -41,7 +43,3 @@ make clean    # Remove build artifacts
 ## Documentation
 
 For detailed development setup, project structure, and contribution guidelines, see [DEVELOPMENT.md](DEVELOPMENT.md).
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
