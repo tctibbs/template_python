@@ -2,74 +2,45 @@
 
 # Python Template
 
-My personal Python project template to provide a streamlined starting point for Python projects.
+A modern Python project template with automated development workflows and quality tools.
 
 ## Features
 
-- **Dependency Management**: Uses [`uv`](https://github.com/astral-sh/uv) for fast dependency installation based on `pyproject.toml`.
-- **Static Analysis**: Integrated with:
-  - [Ruff](https://docs.astral.sh/ruff/): A fast Python linter and formatter.
-  - [Pytest](https://pytest.org/): A framework for running unit tests.
-- **DevContainer Support**: Preconfigured [DevContainer](https://containers.dev/) for a seamless development environment using Docker and VSCode.
+- **Modern Build System**: Uses `hatchling` with `uv` for fast dependency management
+- **Code Quality**: Integrated linting, formatting, and type checking with Ruff and MyPy
+- **Automation**: Makefile commands for common development tasks
+- **Pre-commit Hooks**: Automated code quality checks before each commit
+- **DevContainer Support**: Ready-to-use development environment with Docker and VSCode
 
 ---
 
-## Requirements
+## Quick Start
 
-- Python 3.10 or higher.
-- [`uv`](https://github.com/astral-sh/uv) for installing dependencies.
-- [Docker](https://www.docker.com/) for containerized development (optional but recommended).
+### Prerequisites
+- Python 3.11+
+- [`uv`](https://docs.astral.sh/uv/getting-started/installation/) - Fast Python package installer
 
----
-
-## Setup Instructions
-
-
-### 1. Clone the Repository
+### Setup
 ```bash
-git clone https://github.com/tctibbs/template_python.git
+git clone <your-repo-url>
 cd template_python
+make install
 ```
 
-
-### 2. Set Up the Development Environment
-
-Choose one of the following options:
-
-### Option A: DevContainer
-	1.	Ensure you have Docker and VSCode installed with the Remote - Containers extension.
-	2.	Open the project in VSCode. It will automatically prompt you to open the folder in a container.
-	3.	The DevContainer includes:
-        •	Pre-installed tools like uv, ruff, and pytest.
-        •	Python 3.13-rc Docker image.
-
-Option B: Manual Setup with uv
-
-If you’re running locally:
+### Development Commands
 ```bash
-pip install uv
-uv pip install ".[dev]"
+make help     # Show all available commands
+make lint     # Run linting and type checking  
+make format   # Format code and fix issues
+make test     # Run test suite
+make clean    # Remove build artifacts
 ```
 
+---
 
-## Usage
+## Documentation
 
-Run Linters
-
-``` bash
-ruff .
-```
-
-Run Tests
-
-``` bash
-pytest
-```
-
-
-## Common Errors
-
-- **GPG Error / Not Signed**: Can be caused by insufficient disk space. Free up space and retry.
+For detailed development setup, project structure, and contribution guidelines, see [DEVELOPMENT.md](DEVELOPMENT.md).
 
 ## License
 
