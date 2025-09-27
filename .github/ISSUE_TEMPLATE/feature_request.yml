@@ -1,0 +1,59 @@
+name: "🚀 Feature Request"
+description: Suggest a new feature or improvement for the Python template
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a feature for this Python template!
+        Please fill out the details below clearly and concisely.
+
+  - type: input
+    id: title
+    attributes:
+      label: "Feature Title"
+      description: "Short, descriptive name for the feature."
+      placeholder: "Add Google-style docstring enforcement"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Feature Description"
+      description: "Explain what the feature should do and why it’s needed."
+      placeholder: |
+        This feature adds configuration to enforce Google-style docstrings across the codebase
+        for consistency and clarity in function documentation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: "Proposed Tasks"
+      description: "List the implementation steps for this feature."
+      placeholder: |
+        - [ ] Add [tool.ruff.lint.pydocstyle] to pyproject.toml
+        - [ ] Set convention = 'google'
+        - [ ] Add example docstring file
+        - [ ] Update README or contributing guide
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Additional Context or References"
+      description: "Include links, documentation, or reasoning behind this proposal."
+      placeholder: "https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings"
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Checklist"
+      options:
+        - label: "I’ve verified that this feature doesn’t already exist."
+          required: true
+        - label: "I agree to follow the project’s code and documentation standards."
+          required: true
