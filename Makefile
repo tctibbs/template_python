@@ -1,4 +1,4 @@
-.PHONY: help install lint format test clean
+.PHONY: help install lint format test check clean
 
 # Show available commands
 help:
@@ -21,6 +21,11 @@ format: ## Format code and fix linting issues
 # Run test suite
 test: ## Run pytest test suite
 	uv run pytest -v
+
+# Run all quality gates
+check: ## Run linting, type checking, and tests
+	$(MAKE) lint
+	$(MAKE) test
 
 # Clean build artifacts and cache files
 clean: ## Remove build artifacts and cache files
