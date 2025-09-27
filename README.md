@@ -9,7 +9,7 @@ A modern Python project template with automated development workflows and qualit
 ## Features
 
 - **Modern Build System**: Uses `hatchling` with `uv` for fast dependency management
-- **Code Quality**: Integrated linting, formatting, and type checking with Ruff and MyPy
+- **Code Quality**: Integrated linting and formatting with Ruff
 - **Automation**: Makefile commands for common development tasks
 - **Pre-commit Hooks**: Automated code quality checks before each commit
 - **DevContainer Support**: Ready-to-use development environment with Docker and VSCode
@@ -32,7 +32,7 @@ make install
 ### Development Commands
 ```bash
 make help     # Show all available commands
-make lint     # Run linting and type checking  
+make lint     # Run linting and static analysis  
 make format   # Format code and fix issues
 make test     # Run test suite
 make clean    # Remove build artifacts

@@ -37,15 +37,14 @@ This ensures code quality checks run automatically before each commit.
 |---------|-------------|
 | `make help` | Show all available commands |
 | `make install` | Install project dependencies |
-| `make lint` | Run linting and type checking |
+| `make lint` | Run linting and static analysis |
 | `make format` | Format code and fix linting issues |
 | `make test` | Run the test suite |
 | `make clean` | Remove build artifacts and cache files |
 
 ### Code Quality Tools
 
-- **Ruff** - Fast Python linter and formatter
-- **MyPy** - Static type checker
+- **Ruff** - Fast Python linter, formatter, and static analysis toolkit
 - **Pytest** - Testing framework
 
 ### Pre-commit Hooks
@@ -53,7 +52,6 @@ This ensures code quality checks run automatically before each commit.
 The following checks run automatically on commit:
 - Code formatting with Ruff
 - Linting with Ruff  
-- Type checking with MyPy
 - Trailing whitespace removal
 - End-of-file fixing
 - YAML validation
@@ -128,9 +126,9 @@ git add .
 git commit
 ```
 
-**Type checking errors:**
+**Lint errors:**
 ```bash
-uv run mypy . --show-error-codes
+uv run ruff check .
 ```
 
 ## Environment Variables

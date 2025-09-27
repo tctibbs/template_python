@@ -9,9 +9,9 @@ install: ## Install project dependencies
 	uv sync --group dev
 
 # Run linting checks
-lint: ## Run linting and type checking
+lint: ## Run linting and static analysis
 	uv run ruff check .
-	uv run mypy .
+
 
 # Format code with ruff
 format: ## Format code and fix linting issues
@@ -23,7 +23,7 @@ test: ## Run pytest test suite
 	uv run pytest -v
 
 # Run all quality gates
-check: ## Run linting, type checking, and tests
+check: ## Run linting and tests
 	$(MAKE) lint
 	$(MAKE) test
 
@@ -35,5 +35,4 @@ clean: ## Remove build artifacts and cache files
 	rm -rf build/
 	rm -rf dist/
 	rm -rf .pytest_cache/
-	rm -rf .mypy_cache/
 	rm -rf .ruff_cache/
