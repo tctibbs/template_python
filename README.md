@@ -3,6 +3,7 @@
 # Python Template
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/tctibbs/template_python/actions/workflows/ci.yml/badge.svg)](https://github.com/tctibbs/template_python/actions/workflows/ci.yml)
 
 A modern Python project template with automated development workflows and quality tools.
 
