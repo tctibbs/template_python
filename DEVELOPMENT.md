@@ -71,6 +71,8 @@ template_python/
 ├── tools/                  # Development scripts and utilities
 ├── pyproject.toml          # Project configuration and dependencies
 ├── uv.lock                 # Locked dependency versions
+├── Dockerfile              # Production container image
+├── .dockerignore           # Docker build context filter
 ├── Makefile                # Development automation
 ├── .pre-commit-config.yaml # Pre-commit hook configuration
 └── .gitignore              # Git ignore patterns
@@ -137,6 +139,47 @@ If your project uses environment variables, copy the example file and customize:
 ```bash
 cp .env.example .env
 ```
+
+## Docker
+
+### Production Container
+
+The project includes a production-ready Dockerfile with the following features:
+
+- **Multi-stage build**: Separates build dependencies from runtime, reducing final image size
+- **Slim base image**: Uses `python:3.13-slim-trixie` (~150MB total)
+- **Security**: Runs as non-root user
+- **Reproducibility**: Uses pinned `uv` version and locked dependencies
+- **Optimization**: Layer caching and no pip cache for faster builds
+
+### Building the Image
+
+```bash
+docker build --tag template_python:latest .
+```
+
+### Running the Container
+
+```bash
+# Start Python REPL
+docker run --rm -it template_python:latest
+
+# Execute Python code
+docker run --rm template_python:latest python -c "from python_template import add; print(add(2, 3))"
+
+# Run with volume mounting
+docker run --rm -v $(pwd):/app template_python:latest python your_script.py
+```
+
+### Development Container
+
+For development, use the DevContainer configuration in `.devcontainer/`:
+
+1. Open the project in VSCode
+2. Install the "Dev Containers" extension
+3. Run "Dev Containers: Reopen in Container"
+
+The development container includes all development tools and extensions configured.
 
 ---
 

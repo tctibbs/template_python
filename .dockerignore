@@ -1,0 +1,20 @@
+# Ignore everything by default (allowlist approach).
+**
+
+# Allow only essential files needed for building the container.
+!src
+!pyproject.toml
+!uv.lock
+!README.md
+!LICENSE
+
+# Filter out unwanted files from allowed directories.
+**/__pycache__
+**.py[cod]
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.pytest_cache
+**/.ruff_cache
+**/.mypy_cache
+**/*.egg-info
