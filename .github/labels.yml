@@ -56,21 +56,21 @@
   description: "Low priority"
 
 # Area
-- name: "🧩 A-Domain"
+- name: "🧩 A-Tooling"
   color: "D4C5F9"
-  description: "Core business logic and models"
+  description: "Ruff, pytest, mypy, nox"
 
-- name: "🧩 A-Application"
+- name: "🧩 A-Dependencies"
   color: "C5DEF5"
-  description: "Use cases and application services"
+  description: "Package management"
 
-- name: "🧩 A-Infrastructure"
+- name: "🧩 A-Docker"
   color: "BFD4F2"
-  description: "External concerns (DB, APIs, file systems)"
+  description: "Containers, DevContainer"
 
-- name: "🧩 A-Presenters"
+- name: "🧩 A-Testing"
   color: "F9D0C4"
-  description: "Presentation layer (CLI, API responses, UI)"
+  description: "Test infrastructure"
 
 # Effort
 - name: "📏 E-S"
