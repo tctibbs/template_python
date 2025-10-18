@@ -1,0 +1,90 @@
+# Mechanical Color Label Schema
+
+# Types
+- name: "⚙️ T-Feat"
+  color: "0E8A16"
+  description: "New feature or capability"
+
+- name: "🐞 T-Fix"
+  color: "D73A4A"
+  description: "Bug fix"
+
+- name: "🧱 T-Refactor"
+  color: "0075CA"
+  description: "Code improvement without behavior change"
+
+- name: "🧰 T-Chore"
+  color: "FEF2C0"
+  description: "Maintenance task"
+
+- name: "📘 T-Docs"
+  color: "1D76DB"
+  description: "Documentation update"
+
+# Status
+- name: "⬜ S-Todo"
+  color: "E4E4E4"
+  description: "Not started"
+
+- name: "🟨 S-Doing"
+  color: "FBCA04"
+  description: "In progress"
+
+- name: "🟪 S-Review"
+  color: "A371F7"
+  description: "Ready for review"
+
+- name: "🟩 S-Done"
+  color: "0E8A16"
+  description: "Completed"
+
+# Priority
+- name: "🔴 P-0"
+  color: "B60205"
+  description: "Critical priority"
+
+- name: "🟠 P-1"
+  color: "D93F0B"
+  description: "High priority"
+
+- name: "🟡 P-2"
+  color: "FBCA04"
+  description: "Medium priority"
+
+- name: "🟢 P-3"
+  color: "0E8A16"
+  description: "Low priority"
+
+# Area
+- name: "🧩 A-Domain"
+  color: "D4C5F9"
+  description: "Core business logic and models"
+
+- name: "🧩 A-Application"
+  color: "C5DEF5"
+  description: "Use cases and application services"
+
+- name: "🧩 A-Infrastructure"
+  color: "BFD4F2"
+  description: "External concerns (DB, APIs, file systems)"
+
+- name: "🧩 A-Presenters"
+  color: "F9D0C4"
+  description: "Presentation layer (CLI, API responses, UI)"
+
+# Effort
+- name: "📏 E-S"
+  color: "C2E0C6"
+  description: "Small effort (< 1 day)"
+
+- name: "📏 E-M"
+  color: "FEF2C0"
+  description: "Medium effort (1-3 days)"
+
+- name: "📏 E-L"
+  color: "F7C6C7"
+  description: "Large effort (3-5 days)"
+
+- name: "📏 E-XL"
+  color: "E99695"
+  description: "Extra large effort (> 5 days)"
