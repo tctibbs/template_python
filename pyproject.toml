@@ -38,7 +38,7 @@ build-backend = "hatchling.build"
 packages = ["src/python_template"]
 
 [tool.ruff]
-line-length = 99    # Set the maximum line length (99 chars for side-by-side editors)
+line-length = 88    # Set the maximum line length (88 chars for better readability)
 indent-width = 4    # Number of spaces for indentation (default is 4 spaces)
 target-version = "py311"    # Target Python version for modern syntax
 
