@@ -38,7 +38,7 @@ build-backend = "hatchling.build"
 packages = ["src/python_template"]
 
 [tool.ruff]
-line-length = 88    # Set the maximum line length (88 chars for better readability)
+line-length = 99    # Set the maximum line length (99 chars for side-by-side editors)
 indent-width = 4    # Number of spaces for indentation (default is 4 spaces)
 target-version = "py311"    # Target Python version for modern syntax
 
@@ -49,6 +49,7 @@ select = [
     "W",    # General warnings for non-standard Python usage
     "I",    # Import sorting and organization
     "N",    # Naming convention rules for variables, functions, and classes
+    "D",    # pydocstyle - docstring conventions
     "BLE",  # Better list expressions and prevents suboptimal code patterns
     "B",    # Bug risk and best practice rules
     "A",    # Anti-pattern detection and prevents commonly misused idioms
@@ -59,10 +60,33 @@ select = [
     "UP",   # Upgrade syntax for newer Python versions
     "C4",   # Code complexity and comprehensions
     "SIM",  # Code simplification suggestions
+    "PT",   # pytest-style checks
+    "PTH",  # Use pathlib instead of os.path
+    "PIE",  # Miscellaneous linting rules
+    "ISC",  # Implicit string concatenation
+    "TID",  # Tidy imports
+    "RUF",  # Ruff-specific rules
 ]
 ignore = [
     "E501",  # Line too long (handled by formatter)
+    "D203",  # One blank line before class (conflicts with D211)
+    "D213",  # Multi-line summary second line (conflicts with D212)
 ]
+unfixable = [
+    "F401",  # Prevent auto-removal of unused imports while editing
+]
+
+# Google-style docstring configuration
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+# Import sorting configuration
+[tool.ruff.lint.isort]
+force-sort-within-sections = true
+
+# Tidy imports configuration
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "all"
 
 # Code formatting configuration
 [tool.ruff.format]
